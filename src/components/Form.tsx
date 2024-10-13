@@ -1,4 +1,6 @@
-function Form() {
+interface Props {}
+
+function Form(props: Props) {
   return (
     <>
       <form>

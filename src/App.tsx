@@ -3,12 +3,20 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Title from "./components/Title";
 import Form from "./components/Form";
+import TextBox from "./components/TextBox";
+import TourForm from "./components/TourForm";
 
 function App() {
   return (
     <div>
-      <Form />
-      <Title />
+      <TourForm
+        title="Insert Tour"
+        onSubmit={() => {
+          console.log("submit");
+        }}
+        showId={false}
+        message=""
+      />
     </div>
   );
 }
