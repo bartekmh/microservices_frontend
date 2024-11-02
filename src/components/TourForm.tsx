@@ -31,15 +31,17 @@ function TourForm({ title, onSubmit, showId, message }: Props) {
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(formData),
-    }).then(() => {
-      console.log("done?");
-    });
+    })
+      .then((response) => {
+        console.log("done? " + response.ok);
+      })
+      .catch((error) => console.log("Błąd: ", error));
   };
 
   return (
     <>
       <h1>{title}</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-inline">
         {showId === true && (
           <TextBox
             label="Id"
@@ -88,7 +90,7 @@ function TourForm({ title, onSubmit, showId, message }: Props) {
           }}
         />
         <button type="submit" className="btn btn-primary">
-          Submit
+          Save Tour
         </button>
       </form>
       <p>{message}</p>

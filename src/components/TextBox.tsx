@@ -16,7 +16,7 @@ function TextBox({
   onChangeFun,
 }: Props) {
   return (
-    <div className="form-group">
+    <div className="form-group  mb-2">
       <label htmlFor={id}>{label}</label>
       <input
         type={type}
